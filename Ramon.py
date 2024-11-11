@@ -18,8 +18,5 @@ if uploaded_file is not None:
     st.write("Plotando o gráfico de estimação:")
     fig = dabest_data.mean_diff.plot()
     st.pyplot(fig)
-
-    else:
-        st.error("O arquivo deve conter exatamente 5 colunas numéricas.")
 else:
     st.info("Por favor, faça o upload de um arquivo CSV.")
