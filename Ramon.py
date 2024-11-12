@@ -26,7 +26,7 @@ if uploaded_file is not None:
             "Baseline", "T1", "T2", "T3", "T4"))
 
         multi_baseline_repeated_measures = dabest.load(df, idx=(("Baseline 1", "T1-W", "T2-W", "T3-W","T4-W"),
-                                                      ("Baseline 2", "T1-S", "T2-S", "T4-S","T4-S")),
+                                                      ("Baseline 2", "T1-S", "T2-S", "T4-S","T4-S")),paired="baseline")
 
         # Plotar o gráfico de estimação
         st.write("Plotando o gráfico de estimação:")
