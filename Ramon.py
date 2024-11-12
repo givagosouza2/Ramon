@@ -16,7 +16,7 @@ if uploaded_file is not None:
 
     # Plotar o gráfico de estimação
     st.write("Plotando o gráfico de estimação:")
-    fig = dabest_data.mean_diff.plot(raw_ylim=([80, 100]),
+    fig,ax = dabest_data.mean_diff.plot(raw_ylim=([80, 100]),
     contrast_ylim=([-10, 10]))
     st.pyplot(fig)
 else:
