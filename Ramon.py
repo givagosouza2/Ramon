@@ -31,7 +31,7 @@ if uploaded_file is not None:
         plt.ylim(-10,10)      
         st.pyplot(fig)
         
-        fig = dabest_data.value.plot()
+        fig = dabest_data.values.plot()
         plt.ylim(80,100)    
         st.pyplot(fig)
 else:
