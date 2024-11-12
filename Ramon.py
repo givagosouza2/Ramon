@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import dabest
+import matplotlib.pyplot as plt
 
 # Título da Aplicação
 st.title("Análise de Dados com DABEST")
