@@ -27,11 +27,11 @@ if uploaded_file is not None:
 
         # Plotar o gráfico de estimação
         st.write("Plotando o gráfico de estimação:")
-        fig = dabest_data.mean_diff.plt()
+        fig = dabest_data.mean_diff.plot()
         plt.ylim(-10,10)      
         st.pyplot(fig)
         
-        fig = dabest_data.value.plt()
+        fig = dabest_data.value.plot()
         plt.ylim(80,100)    
         st.pyplot(fig)
 else:
