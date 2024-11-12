@@ -27,9 +27,12 @@ if uploaded_file is not None:
 
         # Plotar o gráfico de estimação
         st.write("Plotando o gráfico de estimação:")
-        fig = plt.figure()
-        plt.plot(dabest_data.mean_diff,raw_ylim=(80,100),contrast_ylim = (-10,10))
-       
+        fig = dabest_data.mean_diff.plt()
+        plt.ylim(-10,10))      
+        st.pyplot(fig)
+        
+        fig = dabest_data.value.plt()
+        plt.ylim(80,100))      
         st.pyplot(fig)
 else:
     st.info("Por favor, faça o upload de um arquivo CSV.")
