@@ -18,7 +18,7 @@ if uploaded_file is not None:
         st.error("O arquivo CSV deve conter as colunas 'Trial' e 'Angulo'.")
     else:
         
-        dabest_data = dabest.load(df, idx=(("Baseline 1", "T1-W", "T2-W", "T3-W","T4-W"),
+        dabest_data = dabest.load(data, idx=(("Baseline 1", "T1-W", "T2-W", "T3-W","T4-W"),
                                                       ("Baseline 2", "T1-S", "T2-S", "T4-S","T4-S")),paired="baseline")
 
         # Plotar o gráfico de estimação
