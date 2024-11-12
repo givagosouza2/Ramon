@@ -25,9 +25,7 @@ if uploaded_file is not None:
         # Plotar o gráfico de estimação
         st.write("Plotando o gráfico de estimação:")
         fig, ax = plt.subplots()
-        dabest_data.mean_diff.plot(ax=ax)
-        ax[0].set_ylim(5, 15)  # Limites para o gráfico superior (dispersão dos dados)
-        ax[1].set_ylim(-3, 3)
+        dabest_data.mean_diff.plot(ax=ax, raw_ylim=(80, 100),contrast_ylim=(-10, 10))
 
         # Exibir o gráfico no Streamlit
         st.pyplot(fig)
