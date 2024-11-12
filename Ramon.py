@@ -25,14 +25,13 @@ if uploaded_file is not None:
         dabest_data = dabest.load(data=data, x="Trial", y="Angulo", idx=(
             "Baseline", "T1", "T2", "T3", "T4"))
 
+        multi_baseline_repeated_measures = dabest.load(df, idx=(("Baseline 1", "T1-W", "T2-W", "T3-W","T4-W"),
+                                                      ("Baseline 2", "T1-S", "T2-S", "T4-S","T4-S")),
+
         # Plotar o gráfico de estimação
         st.write("Plotando o gráfico de estimação:")
         fig = dabest_data.mean_diff.plot()
         plt.ylim(-10,10)      
-        st.pyplot(fig)
-        
-        fig = dabest_data.values.plot()
-        plt.ylim(80,100)    
         st.pyplot(fig)
 else:
     st.info("Por favor, faça o upload de um arquivo CSV.")
