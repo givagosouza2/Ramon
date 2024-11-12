@@ -17,15 +17,8 @@ if uploaded_file is not None:
     if 'Trial' not in data.columns or 'Angulo' not in data.columns:
         st.error("O arquivo CSV deve conter as colunas 'Trial' e 'Angulo'.")
     else:
-        # Seleção dos limites do eixo Y
-        raw_ylim = st.slider("Limite do eixo Y (dados brutos)", 0, 150, (80, 100))
-        contrast_ylim = st.slider("Limite do eixo Y (diferença)", -20, 20, (-10, 10))
-
-        # Carregar os dados no DABEST
-        dabest_data = dabest.load(data=data, x="Trial", y="Angulo", idx=(
-            "Baseline", "T1", "T2", "T3", "T4"))
-
-        multi_baseline_repeated_measures = dabest.load(df, idx=(("Baseline 1", "T1-W", "T2-W", "T3-W","T4-W"),
+        
+        dabest_data = dabest.load(df, idx=(("Baseline 1", "T1-W", "T2-W", "T3-W","T4-W"),
                                                       ("Baseline 2", "T1-S", "T2-S", "T4-S","T4-S")),paired="baseline")
 
         # Plotar o gráfico de estimação
